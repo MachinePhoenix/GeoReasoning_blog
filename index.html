@@ -269,7 +269,7 @@
                   
                     <div class="centered-content">
                         <h2 class="title is-3 has-text-centered">The reward functions</h2>
-                      <p class="subtitle is-5 has-text-centered mb-5">The RLVR stage has two reward functions, the caption reward by computing the ROUGE and BLEU scores, and the reasoning reward by concatenating the question and the generated captions one by one:</p>
+                      <p class="subtitle is-5 has-text-centered mb-5">The RLVR stage has two reward functions, the caption reward and the reasoning reward. The former is a weighted sum of the ROUGE and BLEU scores. For the latter, we construct a series of prompts by concatenating each pre-generated question with its corresponding candidate caption. These prompts are then fed into a language model to generate answers, which are compared against the ground truth to determine correctness — this yields the correctness reward. Additionally, we extract any \boxed{} expressions from the generated responses as an indicator of formatting quality, resulting in the format reward. The reasoning reward is then defined as the weighted sum of the correctness reward and the format reward.:</p>
                       <div class="image-frame">
                             <div class="image-container">
                                 <img src="static/images/reward.jpg" alt="rewarding process" style="width: 100%; display: block;">
