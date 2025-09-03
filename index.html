@@ -306,7 +306,10 @@
         <div class="columns is-centered">
             <div class="column is-two-thirds">
                 <div class="centered-content">
-                    <h2 class="title is-3 has-text-centered">模型性能对比</h2>
+                    <h2 class="title is-3 has-text-centered">Data Quality Evaluation</h2>
+                    <p class="subtitle is-6 has-text-centered">
+                          we test the property for enhancing reasoning capacity of our proposed dataset, compared to other commonly-used datasets (AutoGeo, GeoPeP, GeoGPT4, and Geo170K). Specifically, we randomly sample 1k/10k/100k samples of these baseline datasets, Then we train the baseline models (Gemma3-4B) on these datasets, after which evaluating on MathVista and MathVerse benchmarks.
+                      </p>
                     
                     <div class="table-container" style="margin: 2rem 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         <table class="table is-fullwidth is-hoverable is-striped">
@@ -383,9 +386,7 @@
                         </table>
                     </div>
                     
-                    <p class="subtitle is-6 has-text-centered">
-                        表格展示了RAFT模型与传统基线方法的性能对比。我们的完整RAFT模型在所有指标上均取得了最佳性能。
-                    </p>
+                    
                 </div>
             </div>
         </div>
