@@ -312,34 +312,72 @@
                         <table class="table is-fullwidth is-hoverable is-striped">
                             <thead>
                                 <tr>
-                                    <th class="has-text-centered">模型</th>
-                                    <th class="has-text-centered">BLEU-4</th>
-                                    <th class="has-text-centered">ROUGE-L</th>
-                                    <th class="has-text-centered">CIDEr</th>
-                                    <th class="has-text-centered">推理速度 (ms)</th>
+                                    <th class="has-text-centered">Dataset</th>
+                                    <th class="has-text-centered">Size</th>
+                                    <th class="has-text-centered">MathVerse(%)</th>
+                                    <th class="has-text-centered">MathVista(%)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="has-text-weight-semibold">Baseline</td>
-                                    <td class="has-text-centered">0.32</td>
-                                    <td class="has-text-centered">0.45</td>
-                                    <td class="has-text-centered">1.05</td>
-                                    <td class="has-text-centered">120</td>
+                                    <td class="has-text-weight-semibold">AutoGeo</td>
+                                    <td class="has-text-centered">1K</td>
+                                    <td class="has-text-centered">23.9</td>
+                                    <td class="has-text-centered">47.6</td>
                                 </tr>
                                 <tr>
-                                    <td class="has-text-weight-semibold">RAFT (SFT only)</td>
-                                    <td class="has-text-centered">0.38</td>
-                                    <td class="has-text-centered">0.52</td>
-                                    <td class="has-text-centered">1.28</td>
-                                    <td class="has-text-centered">135</td>
+                                      <td class="has-text-weight-semibold">AutoGeo</td>
+                                      <td class="has-text-centered">10K</td>
+                                      <td class="has-text-centered">24.3</td>
+                                      <td class="has-text-centered">47.5</td>
+                                  </tr>
+                                <tr>
+                                      <td class="has-text-weight-semibold">AutoGeo</td>
+                                      <td class="has-text-centered">100K</td>
+                                      <td class="has-text-centered">24.7</td>
+                                      <td class="has-text-centered">46.1</td>
+                                  </tr>
+                                <tr>
+                                    <td class="has-text-weight-semibold">GeoPeP</td>
+                                    <td class="has-text-centered">1K</td>
+                                    <td class="has-text-centered">23.8</td>
+                                    <td class="has-text-centered">48.5</td>
                                 </tr>
                                 <tr>
-                                    <td class="has-text-weight-semibold">RAFT (full)</td>
-                                    <td class="has-text-centered has-text-success has-text-weight-bold">0.45</td>
-                                    <td class="has-text-centered has-text-success has-text-weight-bold">0.58</td>
-                                    <td class="has-text-centered has-text-success has-text-weight-bold">1.42</td>
-                                    <td class="has-text-centered">140</td>
+                                    <td class="has-text-weight-semibold">GeoPeP</td>
+                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">24.0</td>
+                                    <td class="has-text-centered">48.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="has-text-weight-semibold">GeoPeP</td>
+                                    <td class="has-text-centered">100K</td>
+                                    <td class="has-text-centered">22.7</td>
+                                    <td class="has-text-centered">47.1</td>
+                                </tr>
+                               <tr>
+                                    <td class="has-text-weight-semibold">GeoGPT4</td>
+                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">24.5</td>
+                                    <td class="has-text-centered">46.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="has-text-weight-semibold">Geo170K</td>
+                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">23.7</td>
+                                    <td class="has-text-centered">48.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="has-text-weight-semibold">ours</td>
+                                    <td class="has-text-centered">1K</td>
+                                    <td class="has-text-centered">25.0</td>
+                                    <td class="has-text-centered">47.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="has-text-weight-semibold">ours</td>
+                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">26.3</td>
+                                    <td class="has-text-centered">48.9</td>
                                 </tr>
                             </tbody>
                             <tfoot>
