@@ -265,7 +265,7 @@
                 <div class="centered-content">
                     <h2 class="title is-3 has-text-centered">Data Quality Evaluation</h2>
                     <p class="subtitle is-5 mb-5">
-                          We test the property for enhancing reasoning capacity of our proposed dataset, compared to other commonly-used datasets (AutoGeo, GeoPeP, GeoGPT4, and Geo170K). Specifically, we randomly sample 1k/10k/100k samples of these baseline datasets, Then we train the baseline models (Gemma3-4B) on these datasets, after which evaluating on MathVista and MathVerse benchmarks.
+                          We test the property for enhancing reasoning capacity of our proposed dataset, compared to other commonly-used datasets (AutoGeo, GeoPeP, GeoGPT4, and Geo170K). Specifically, we randomly sample 10k samples of all these datasets, Then we train the baseline models (Gemma3-4B) on these datasets, after which we evaluate on MathVista and MathVerse benchmarks.
                       </p>
                     
                     <div class="table-container" style="margin: 2rem 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
@@ -273,7 +273,7 @@
                             <thead>
                                 <tr>
                                     <th class="has-text-centered">Dataset</th>
-                                    <th class="has-text-centered">Size</th>
+                                    <th class="has-text-centered">Type</th>
                                     <th class="has-text-centered">MathVerse(%)</th>
                                     <th class="has-text-centered">MathVista(%)</th>
                                 </tr>
@@ -282,34 +282,34 @@
                                 
                                 <tr>
                                       <td class="has-text-centered has-text-weight-semibold">AutoGeo</td>
-                                      <td class="has-text-centered">10K</td>
+                                      <td class="has-text-centered">caption</td>
                                       <td class="has-text-centered">24.3</td>
                                       <td class="has-text-centered">47.5</td>
                                   </tr>
                                 
                                 <tr>
                                     <td class="has-text-centered has-text-weight-semibold">GeoPeP</td>
-                                    <td class="has-text-centered">10K</td>
+<!--                                     <td class="has-text-centered">caption</td> -->
                                     <td class="has-text-centered">24.0</td>
                                     <td class="has-text-centered">48.2</td>
                                 </tr>
                                 
                                <tr>
                                     <td class="has-text-centered has-text-weight-semibold">GeoGPT4</td>
-                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">qa</td>
                                     <td class="has-text-centered">24.5</td>
                                     <td class="has-text-centered">46.9</td>
                                 </tr>
                                 <tr>
                                     <td class="has-text-centered has-text-weight-semibold">Geo170K</td>
-                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">qa</td>
                                     <td class="has-text-centered">23.7</td>
                                     <td class="has-text-centered">48.1</td>
                                 </tr>
                                 
                                 <tr>
                                     <td class="has-text-centered has-text-weight-semibold">GeoReasoning</td>
-                                    <td class="has-text-centered">10K</td>
+                                    <td class="has-text-centered">caption</td>
                                     <td class="has-text-centered has-text-weight-bold">26.3</td>
                                     <td class="has-text-centered has-text-weight-bold">48.9</td>
                                 </tr>
