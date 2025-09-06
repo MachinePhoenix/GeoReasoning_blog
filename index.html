@@ -250,7 +250,7 @@
                             </div>
                         </div>
                     </div>
-                  <p class="subtitle is-5 has-text-centered mb-5">The RLVR stage has two reward functions, the caption reward and the reasoning reward. The former is a weighted sum of the ROUGE and BLEU scores. For the latter, we construct a series of prompts by concatenating each pre-generated question with its corresponding candidate caption. These prompts are then fed into a language model to generate answers, which are compared against the ground truth to determine correctness to get the correctness reward. Then we extract the format tags to get the format reward. The reasoning reward is then defined as the weighted sum of the correctness reward and the format reward.</p>
+                  <p class="subtitle is-5 mb-5">The RLVR stage has two reward functions, the caption reward and the reasoning reward. The former is a weighted sum of the ROUGE and BLEU scores. For the latter, we construct a series of prompts by concatenating each pre-generated question with its corresponding candidate caption. These prompts are then fed into a language model to generate answers, which are compared against the ground truth to determine correctness to get the correctness reward. Then we extract the format tags to get the format reward. The reasoning reward is then defined as the weighted sum of the correctness reward and the format reward.</p>
                     
                 </div>
             </div>
@@ -264,7 +264,7 @@
             <div class="column is-two-thirds">
                 <div class="centered-content">
                     <h2 class="title is-3 has-text-centered">Data Quality Evaluation</h2>
-                    <p class="subtitle is-6">
+                    <p class="subtitle is-5 mb-5">
                           We test the property for enhancing reasoning capacity of our proposed dataset, compared to other commonly-used datasets (AutoGeo, GeoPeP, GeoGPT4, and Geo170K). Specifically, we randomly sample 1k/10k/100k samples of these baseline datasets, Then we train the baseline models (Gemma3-4B) on these datasets, after which evaluating on MathVista and MathVerse benchmarks.
                       </p>
                     
@@ -342,7 +342,7 @@
                             </tbody>
                         </table>
                     </div>
-                  <p class="subtitle is-6">
+                  <p class="subtitle is-5 mb-5">
                           Observed from this table, the model trained on GeoReasoning-10K has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning-10K to enhance the model’s reasoning capabilities.
                       </p>
                     
