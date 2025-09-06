@@ -165,39 +165,27 @@
 -->
 <!-- End teaser video -->
 
-
-  <section class="section image-display-section">
+<section class="section image-display-section">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-two-thirds">
                     <div class="centered-content">
-<!--                         <h2 class="title is-3 has-text-centered">项目展示</h2> -->
+<!--                         <h2 class="title is-3 has-text-centered">Generated Images</h2> -->
                         
                         <div class="image-frame">
-                            <div class="image-container">
-                                <img src="static/images/generation.jpg" alt="data_generation" style="width: 100%; display: block;">
+                            <div class="image-container" style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                                <img src="static/images/ex1.png" alt="easy" style="width: 30%; display: block;">
+                                <img src="static/images/ex2.png" alt="medium" style="width: 30%; display: block;">
+                                <img src="static/images/ex3.png" alt="hard" style="width: 30%; display: block;">
                             </div>
                         </div>
-                      
-
-                      <!--
-                        <div class="image-description has-text-centered">
-                            <h3 class="title is-4">创新性解决方案</h3>
-                            <p class="subtitle is-6">这是我们针对当前挑战提出的创新性解决方案，展示了在性能上的显著提升和实际应用价值。</p>
-                            <div class="content">
-                                <p>该方案具有以下特点：</p>
-                                <ul>
-                                    <li>提高了处理效率达40%</li>
-                                </ul>
-                            </div>
-                        </div>
-                      -->
+                      <p class="subtitle is-5 mb-5">These geometry problems are composed from templates in our relation library, corresponding to easy, medium, and hard difficulty levels, respectively. For visual clarity, this figure has modified colors, font sizes, and line thicknesses compared to the original images in our constructed dataset; please refer to the original dataset for precise details.</p>
                     </div>
-                  <p class="subtitle is-5 mb-5">The geometry data synthesis pipeline, where a graph-based representation similar to AutoGeo is employed for generating the final geometry images. The relation library comprises over 50 basic geometric relationships that can be composed into complex ones, providing comprehensive coverage for geometric problems of various difficulties. The image-caption pair is utilized for the SFT stage, while the caption-QA pair for the RLVR stage.</p>
                 </div>
             </div>
         </div>
     </section>
+  
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -216,42 +204,24 @@
 <!-- End paper abstract -->
 
 
-
 <section class="section image-display-section">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-two-thirds">
                     <div class="centered-content">
-                        <h2 class="title is-3 has-text-centered">Generated Images</h2>
-                        
-                        
+                        <h2 class="title is-3 has-text-centered">Data Generation Pipeline</h2>
                         <div class="image-frame">
-                            <div class="image-container" style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
-                                <img src="static/images/ex1.png" alt="easy" style="width: 30%; display: block;">
-                                <img src="static/images/ex2.png" alt="medium" style="width: 30%; display: block;">
-                                <img src="static/images/ex3.png" alt="hard" style="width: 30%; display: block;">
+                            <div class="image-container">
+                                <img src="static/images/generation.jpg" alt="data_generation" style="width: 100%; display: block;">
                             </div>
                         </div>
-                      <p class="subtitle is-5 mb-5">These geometry problems are composed from templates in our relation library, corresponding to easy, medium, and hard difficulty levels, respectively. For visual clarity, this figure has modified colors, font sizes, and line thicknesses compared to the original images in our constructed dataset; please refer to the original dataset for precise details.</p>
-
-                      <!--
-                        <div class="image-description has-text-centered">
-                            <h3 class="title is-4">创新性解决方案</h3>
-                            <p class="subtitle is-6">这是我们针对当前挑战提出的创新性解决方案，展示了在性能上的显著提升和实际应用价值。</p>
-                            <div class="content">
-                                <p>该方案具有以下特点：</p>
-                                <ul>
-                                    <li>提高了处理效率达40%</li>
-                                </ul>
-                            </div>
-                        </div>
-                      -->
                     </div>
+                  <p class="subtitle is-5 mb-5">The geometry data synthesis pipeline, where a graph-based representation similar to AutoGeo is employed for generating the final geometry images. The relation library comprises over 50 basic geometric relationships that can be composed into complex ones, providing comprehensive coverage for geometric problems of various difficulties. The image-caption pair is utilized for the SFT stage, while the caption-QA pair for the RLVR stage.</p>
                 </div>
             </div>
         </div>
     </section>
-
+  
 
 <section class="section image-display-section">
         <div class="container">
