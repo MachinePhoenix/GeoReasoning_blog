@@ -975,6 +975,77 @@
     </div>
   </section>
 
+
+
+  <section class="method-section">
+    <style>
+      .method-section {
+        padding: 4rem 2rem;
+        background: #f8f9fa;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .method-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+    </style>
+
+    <div class="method-container">
+      <h2 class="section-title">Methodology</h2>
+      <h3 class="subsection-title">Data Generation Pipeline</h3>
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+            <div style="flex: 0 0 90%; text-align: center;">
+                <figure>
+                  <img src="static/images/generation.jpg" alt="generation"
+                    style="width: 100%; height: auto; border-radius: 0.5rem;">
+                  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+                  </figcaption>
+                </figure>
+              </div>
+          </div>
+        <div class="description">
+        <p>The geometry data synthesis pipeline, where a graph-based representation similar to AutoGeo is employed for generating the final geometry images. The relation library comprises over 50 basic geometric relationships that can be composed into complex ones, providing comprehensive coverage for geometric problems of various difficulties. The image-caption pair is utilized for the SFT stage, while the caption-QA pair for the RLVR stage.</p>
+        </div>
+        
+        <h3 class="subsection-title">Training Pipeline</h3>
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+            <div style="flex: 0 0 90%; text-align: center;">
+                <figure>
+                  <img src="static/images/raft.jpg" alt="raft"
+                    style="width: 100%; height: auto; border-radius: 0.5rem;">
+                  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+                  </figcaption>
+                </figure>
+              </div>
+          </div>
+        <div class="description">
+        <p>The workflow of Geo-Image-Textualization method. In Stage 1, the model is trained to develop a preliminary ability to generate image captions. In Stage 2, an alternating optimization strategy is employed to jointly refine the generated captions and enhance the model's overall performance. The data of Stage 1 comes from the rule-based image-caption generation pipeline.</p>
+        </div>
+
+        <h3 class="subsection-title">Reward Modeling</h3>
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+            <div style="flex: 0 0 90%; text-align: center;">
+                <figure>
+                  <img src="static/images/reward.jpg" alt="reward"
+                    style="width: 100%; height: auto; border-radius: 0.5rem;">
+                  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+                  </figcaption>
+                </figure>
+              </div>
+          </div>
+        <div class="description">
+        <p>The reward modeling includes two reward functions, the caption reward and the reasoning reward. The former is a weighted sum of the ROUGE and BLEU scores. For the latter, we construct a series of prompts by concatenating each pre-generated question with its corresponding candidate caption, after which we feed them into a language model to generate answers and compare against the ground truth to get the correctness reward.</p>
+        </div>
+
+    </div>
+  </section>
+  
+
+
+
   <section class="case-section">
     <style>
       .case-section {
@@ -998,7 +1069,7 @@
             <p>Here are some randomly selected samples from MathVista.</p>
         </div>
         <div class="container">
-            <div id="results-carousel" class="carousel results-carousel" style="margin-top: -0rem;">
+            <div id="results-carousel" class="carousel results-carousel" style="margin-top: -32rem;">
               <div class="item is-flex is-justify-content-center" >
                  <img class="image is-16by9" style="max-width: 800px;" src="static/images/case1.jpg" alt="case1"/>
                 <h2 class="subtitle has-text-centered">
