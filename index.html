@@ -649,10 +649,10 @@
         padding: 12px 15px;
         text-align: left;
       }
-      .table-container tbody tr:hover {
-        background-color: #ffffff !important;
+      /* .table-container tbody tr:hover {
+        background-color: #f5f5f5 !important;
         transition: background-color 0.2s ease;
-        }
+        } */
 
       .block-1 {
         background-color: #fff0f5;
@@ -927,85 +927,6 @@
           </tbody>
         </table>
       </div>
-
-    
-      <div class="table-container">
-        <h3 class="subtitle">Table 2: Full Proof Generation Performance on miniF2F</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>Pass</th>
-              <th>Performance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Block 1 - Pass@32/128 -->
-            <tr class="block-1">
-              <td>TheoremLamma</td>
-              <td>128</td>
-              <td>33.6%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1</td>
-              <td>32</td>
-              <td>46.1% ± 0.5%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>32</td>
-              <td>48.2% ± 0.6%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>32</td>
-              <td>50.0% ± 0.5%</td>
-            </tr>
-            <tr class="block-1 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>32</td>
-              <td class="highlight">57.6% ± 0.7%</td>
-            </tr>
-
-            <!-- Block 2 - Pass@3200 -->
-            <tr class="block-2">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>3200</td>
-              <td>53.3%</td>
-            </tr>
-            <tr class="block-2">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>3200</td>
-              <td>54.9%</td>
-            </tr>
-            <tr class="block-2 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>3200</td>
-              <td class="highlight">62.7%</td>
-            </tr>
-
-            <!-- Block 3 - Pass@4×6400 -->
-            <tr class="block-3">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>4×6400</td>
-              <td>55.8%</td>
-            </tr>
-            <tr class="block-3">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>4×6400</td>
-              <td>58.5%</td>
-            </tr>
-            <tr class="block-3 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>4×6400</td>
-              <td class="highlight">64.7%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-
-
       <div class="description">
         <p>The model trained on GeoReasoning has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning to enhance the model's reasoning capabilities.</p>
       </div>
@@ -1088,68 +1009,9 @@
         font-weight: 600;
       }
 
-      .table-container {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 2rem;
-        overflow: hidden;
-      }
-
-      .table-container table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .table-container th {
-        background-color: white;
-        padding: 12px 15px;
-        text-align: left;
-        font-weight: bold;
-        border-bottom: 2px solid #eee;
-      }
-
-      .table-container td {
-        padding: 12px 15px;
-        text-align: left;
-      }
-
-      .block-1 {
-        background-color: #fff0f5;
-        /* 浅粉色 */
-      }
-
-      .block-2 {
-        background-color: #f0f8ff;
-        /* 浅蓝色 */
-      }
-
-      .block-3 {
-        background-color: #f0fff0;
-        /* 浅绿色 */
-      }
-
       .highlight {
         color: #2980b9;
         font-weight: bold;
-      }
-
-      .table-container table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .table-container th,
-      .table-container td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #e1e1e1;
-      }
-
-      .table-container th {
-        background-color: #f8f9fa;
-        font-weight: bold;
-        color: #2c3e50;
       }
 
       .highlight {
