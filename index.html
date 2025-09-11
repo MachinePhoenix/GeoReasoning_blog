@@ -133,14 +133,14 @@
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
-                We introduce Goedel-Prover, an open-source language model that achieves state-of-the-art performance in automated formal proof generation for mathematical problems. A key challenge in this field is the scarcity of formalized mathematical statements and proofs, which we address through the following approaches. First, we train statement formalizers to translate natural language math problems from Numina into the formal language Lean 4, and use an LLM to verify that the formal statements accurately preserve the content of the original problems. This results in a dataset of 1.64 million formal statements. We then iteratively build a large dataset of formal proofs by training a series of provers: each prover is able to prove many statements that the previous ones could not, and these new proofs are added to the training set for the next prover. Despite using only supervised fine-tuning, our final prover (fine-tuned on DeepSeek-Prover-V1.5-Base) significantly outperforms the previous best open-source model, DeepSeek-Prover-V1.5-RL, which uses reinforcement learning (RL). On the miniF2F benchmark, our model achieves a success rate of 57.6% (Pass@32), surpassing DeepSeek-Prover-V1.5-RL by 7.6%. On PutnamBench, Goedel-Prover successfully solves 7 problems (Pass@512), ranking first on the leaderboard. Furthermore, it generates 29.7K formal proofs for Lean Workbook problems, nearly doubling the 15.7K produced by prior work. We provide extensive discussion of our training methodology, highlighting the key design choices that contribute to Goedel-Prover's strong performance. We then explore direct preference optimization (DPO) and other forms of reinforcement learning on top of Goedel-Prover-SFT, improving success to over 60% (Pass@32) on miniF2F. Additionally, we fully open source our code, model, and formalized statements to facilitate future research. 
+                Multimodal large language models have various practical applications that demand strong reasoning abilities. Despite recent advancements in this area, these models still struggle to solve complex geometric problems. A key challenge stems from the lack of high-quality image-text pair datasets for understanding geometric images. Furthermore, most template-based data synthesis pipelines typically fail to generalize to questions outside their predefined templates. In this paper, we mitigate this issue by introducing a complementary RLHF process into the data generation pipeline. By adopting RAFT to adjust captions for image-text pairs generated from fewer than 50 templates and using reward signals derived from downstream mathematical problem-solving tasks, our pipeline successfully captures the key features of geometry problem-solving. This enables better task generalization and yields non-trivial improvements. Furthermore, the generated dataset also enhances the general mathematical reasoning capabilities of multimodal large language models beyond the domain of geometric mathematical problems, yielding accuracy improvements of 2.8%–5.3% in arithmetic, algebraic, and numerical tasks with even non-geometric input images.
               </p>
             </div>
           </div>
         </div>
         <!--/ Abstract. -->
       </div>
-  <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">    
+  <!-- <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">    
     <div style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       <h2 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1f2937;">Key Achievements</h2>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">  
@@ -164,9 +164,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+    <!-- <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
       <div style="flex: 0 0 40%; text-align: center;">
         <figure>
           <img src="static/images/minif2f_bar_plot.png" alt="miniF2F Performance"
@@ -194,7 +194,7 @@
           </figcaption>
         </figure>
       </div>
-    </div>
+    </div> -->
     <figcaption style="font-size: 1rem; color: #6b7280;">
     <p>
       The Pass@N metric indicates that we generate N proofs for a single problem; if any one of these N proofs successfully solves the problem, it is considered solved. <strong>(Left)</strong>: The performance of Pass@32 for full proof generation on miniF2F. Due to limited compute, we compare with DeepSeek-Prover-v1.5 on the Pass@32 metric. <strong>(Middle)</strong>: This sub-figure presents a comparison of Goedel-Prover and Deepseek-Prover-v1.5 in terms of miniF2F performance across different inference budgets, ranging from Pass@32, 64, 128, ..., 4 × 6400, to 16 × 6400. <strong>(Right)</strong>: The number of problems solved in Lean-workbook by Goedel-Prover-SFT compared to prior works. InternLM2.5-Step-Prover and InternLM-Math-Plus collectively solve and open-source 15.7K samples, while we solve and open-source 29.7K samples.
