@@ -166,35 +166,35 @@
     </div>
   </section> -->
   <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">
-    <!-- <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
       <div style="flex: 0 0 40%; text-align: center;">
         <figure>
-          <img src="static/images/minif2f_bar_plot.png" alt="miniF2F Performance"
+          <img src="static/images/ex1.png" alt="easy"
             style="width: 100%; height: auto; border-radius: 0.5rem;">
           <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-            Performance of Pass@32 for full proof generation on miniF2F
+            An easy example
           </figcaption>
         </figure>
       </div>
       <div style="flex: 0 0 30%; text-align: center;">
         <figure>
-          <img src="static/images/inference_scale_performance.png" alt="Inference Scale Performance"
+          <img src="static/images/ex2.png" alt="medium"
             style="width: 100%; height: auto; border-radius: 0.5rem;">
           <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-            Comparison across different inference budgets
+            A medium example
           </figcaption>
         </figure>
       </div>
       <div style="flex: 0 0 23%; text-align: center;">
         <figure>
-          <img src="static/images/leanworkbook_proofs_bar_plot.png" alt="Leanworkbook Proofs"
+          <img src="static/images/ex3.png" alt="hard"
             style="width: 100%; height: auto; border-radius: 0.5rem;">
           <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-            Number of problems solved in Lean-workbook
+            A hard example
           </figcaption>
         </figure>
       </div>
-    </div> -->
+    </div>
     <figcaption style="font-size: 1rem; color: #6b7280;">
     <p>
       The Pass@N metric indicates that we generate N proofs for a single problem; if any one of these N proofs successfully solves the problem, it is considered solved. <strong>(Left)</strong>: The performance of Pass@32 for full proof generation on miniF2F. Due to limited compute, we compare with DeepSeek-Prover-v1.5 on the Pass@32 metric. <strong>(Middle)</strong>: This sub-figure presents a comparison of Goedel-Prover and Deepseek-Prover-v1.5 in terms of miniF2F performance across different inference budgets, ranging from Pass@32, 64, 128, ..., 4 × 6400, to 16 × 6400. <strong>(Right)</strong>: The number of problems solved in Lean-workbook by Goedel-Prover-SFT compared to prior works. InternLM2.5-Step-Prover and InternLM-Math-Plus collectively solve and open-source 15.7K samples, while we solve and open-source 29.7K samples.
