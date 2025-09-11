@@ -835,7 +835,7 @@
                   <img src="static/images/mmmu_bar.jpg" alt="mathvista"
                     style="width: 100%; height: auto; border-radius: 0.5rem;">
                   <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
-                    MMMU
+                    The accuracy of the base model and the model SFTed on GeoReasoning evaluated on MMMU
                   </figcaption>
                 </figure>
               </div>
@@ -871,7 +871,7 @@
         </div>
         <figcaption style="margin-top: 0.5rem; font-size: 1rem; color: #6b7280; text-align: center">
             <p>
-                The accuracy of models SFTed on diverse capacities and datasets evaluated on downstream benchmarks.
+                The accuracy of models SFTed on diverse capacities and datasets evaluated on downstream benchmarks
             </p>  
         </figcaption>
         <div class="description">
@@ -882,87 +882,55 @@
 
       <!-- Full Proof Generation Results -->
       <div class="table-container">
-        <div class="description">
-            <p>The model trained on GeoReasoning has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning to enhance the model's reasoning capabilities.</p>
-        </div>
-        <h3 class="subtitle">Table: Accuracy of the Models Trained on 10k Random Samples of AutoGeo, GeoPeP, GeoGPT4, Geo170K, and GeoReasoning Over Multiple Random Seeds.</h3>
+        
+        <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds.</h3>
         <table>
           <thead>
             <tr>
-              <th>Model</th>
-              <th>Pass</th>
-              <th>Performance</th>
+              <th>Dataset</th>
+              <th>Type</th>
+              <th>MathVerse</th>
+              <th>MathVistae</th>
             </tr>
           </thead>
           <tbody>
             <!-- Block 1 - Pass@32/128 -->
             <tr class="block-1">
-              <td>TheoremLamma</td>
-              <td>128</td>
-              <td>33.6%</td>
+              <td>AutoGeo</td>
+              <td>Caption</td>
+              <td>24.5±0.4</td>
+              <td>47.6±0.5</td>
             </tr>
             <tr class="block-1">
-              <td>Deepseek-Prover-v1</td>
-              <td>32</td>
-              <td>46.1% ± 0.5%</td>
+                <td>GeoPeP</td>
+                <td>Caption</td>
+                <td>24.2±0.2</td>
+                <td>47.7±0.4</td>
             </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>32</td>
-              <td>48.2% ± 0.6%</td>
-            </tr>
-            <tr class="block-1">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>32</td>
-              <td>50.0% ± 0.5%</td>
-            </tr>
-            <tr class="block-1 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>32</td>
-              <td class="highlight">57.6% ± 0.7%</td>
-            </tr>
-
             <!-- Block 2 - Pass@3200 -->
             <tr class="block-2">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>3200</td>
-              <td>53.3%</td>
+                <td>GeoGPT4V</td>
+                <td>QA</td>
+                <td>25.2±0.5</td>
+                <td>47.5±0.2</td>
             </tr>
             <tr class="block-2">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>3200</td>
-              <td>54.9%</td>
-            </tr>
-            <tr class="block-2 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>3200</td>
-              <td class="highlight">62.7%</td>
-            </tr>
-
-            <!-- Block 3 - Pass@4×6400 -->
-            <tr class="block-3">
-              <td>Deepseek-Prover-v1.5-SFT</td>
-              <td>4×6400</td>
-              <td>55.8%</td>
-            </tr>
-            <tr class="block-3">
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>4×6400</td>
-              <td>58.5%</td>
+                <td>Geo170K</td>
+                <td>QA</td>
+                <td>25.3±0.1</td>
+                <td>47.6±0.3</td>
             </tr>
             <tr class="block-3 goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td>4×6400</td>
-              <td class="highlight">64.7%</td>
+              <td>GeoReasoning</td>
+              <td>Caption</td>
+              <td class="highlight">26.0±0.3</td>
+              <td class="highlight">48.8±0.2</td>
             </tr>
           </tbody>
         </table>
       </div>
-
       <div class="description">
-        <p>Our Goedel-Prover-SFT achieves state-of-the-art performance on miniF2F, surpassing previous models by
-          significant margins. The model shows consistent improvement across different computational budgets, achieving
-          57.6% at Pass@32, 62.7% at Pass@3200, and 64.7% at Pass@4×6400.</p>
+        <p>The model trained on GeoReasoning has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning to enhance the model's reasoning capabilities.</p>
       </div>
 
       <!-- Multiple Dataset Performance -->
