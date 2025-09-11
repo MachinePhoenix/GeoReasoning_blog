@@ -927,6 +927,85 @@
           </tbody>
         </table>
       </div>
+
+    
+      <div class="table-container">
+        <h3 class="subtitle">Table 2: Full Proof Generation Performance on miniF2F</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Pass</th>
+              <th>Performance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Block 1 - Pass@32/128 -->
+            <tr class="block-1">
+              <td>TheoremLamma</td>
+              <td>128</td>
+              <td>33.6%</td>
+            </tr>
+            <tr class="block-1">
+              <td>Deepseek-Prover-v1</td>
+              <td>32</td>
+              <td>46.1% ± 0.5%</td>
+            </tr>
+            <tr class="block-1">
+              <td>Deepseek-Prover-v1.5-SFT</td>
+              <td>32</td>
+              <td>48.2% ± 0.6%</td>
+            </tr>
+            <tr class="block-1">
+              <td>Deepseek-Prover-v1.5-RL</td>
+              <td>32</td>
+              <td>50.0% ± 0.5%</td>
+            </tr>
+            <tr class="block-1 goedel-row">
+              <td>Goedel-Prover-SFT</td>
+              <td>32</td>
+              <td class="highlight">57.6% ± 0.7%</td>
+            </tr>
+
+            <!-- Block 2 - Pass@3200 -->
+            <tr class="block-2">
+              <td>Deepseek-Prover-v1.5-SFT</td>
+              <td>3200</td>
+              <td>53.3%</td>
+            </tr>
+            <tr class="block-2">
+              <td>Deepseek-Prover-v1.5-RL</td>
+              <td>3200</td>
+              <td>54.9%</td>
+            </tr>
+            <tr class="block-2 goedel-row">
+              <td>Goedel-Prover-SFT</td>
+              <td>3200</td>
+              <td class="highlight">62.7%</td>
+            </tr>
+
+            <!-- Block 3 - Pass@4×6400 -->
+            <tr class="block-3">
+              <td>Deepseek-Prover-v1.5-SFT</td>
+              <td>4×6400</td>
+              <td>55.8%</td>
+            </tr>
+            <tr class="block-3">
+              <td>Deepseek-Prover-v1.5-RL</td>
+              <td>4×6400</td>
+              <td>58.5%</td>
+            </tr>
+            <tr class="block-3 goedel-row">
+              <td>Goedel-Prover-SFT</td>
+              <td>4×6400</td>
+              <td class="highlight">64.7%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
       <div class="description">
         <p>The model trained on GeoReasoning has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning to enhance the model's reasoning capabilities.</p>
       </div>
