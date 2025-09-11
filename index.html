@@ -877,7 +877,7 @@
       <!-- Full Proof Generation Results -->
       <div class="table-container">
         
-        <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds.</h3>
+        <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds</h3>
         <table>
           <thead>
             <tr>
@@ -998,7 +998,268 @@
     </div>
   </section>
 
+  <section class="case-section">
+    <style>
+      .goedel-row {
+        font-weight: bold;
+      }
 
+      .case-section {
+        padding: 4rem 2rem;
+        background: #f8f9fa;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .case-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #2c3e50;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .subsection-title {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        font-weight: 600;
+      }
+
+      .table-container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+
+      .table-container table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table-container th {
+        background-color: white;
+        padding: 12px 15px;
+        text-align: left;
+        font-weight: bold;
+        border-bottom: 2px solid #eee;
+      }
+
+      .table-container td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+
+      .block-1 {
+        background-color: #fff0f5;
+        /* 浅粉色 */
+      }
+
+      .block-2 {
+        background-color: #f0f8ff;
+        /* 浅蓝色 */
+      }
+
+      .block-3 {
+        background-color: #f0fff0;
+        /* 浅绿色 */
+      }
+
+      .highlight {
+        color: #2980b9;
+        font-weight: bold;
+      }
+
+      .table-container table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table-container th,
+      .table-container td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e1e1e1;
+      }
+
+      .table-container th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .highlight {
+        color: #2980b9;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .description {
+        margin: 1.5rem 0;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .diamond-green {
+        color: #22c55e;
+      }
+
+      .diamond-black {
+        color: #000;
+      }
+
+      .multirow {
+        vertical-align: middle;
+      }
+
+      @media (max-width: 768px) {
+        .results-section {
+          padding: 2rem 1rem;
+        }
+
+        .table-container th,
+        .table-container td {
+          padding: 8px;
+          font-size: 0.9rem;
+        }
+
+        .table-container {
+          overflow-x: auto;
+        }
+      }
+
+      .key-findings {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-top: 3rem;
+      }
+
+      .key-findings h3 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+      }
+
+      .key-findings ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .key-findings li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+        color: #4a5568;
+      }
+
+      .key-findings li:before {
+        content: "•";
+        color: #3b82f6;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 768px) {
+        .key-findings {
+          padding: 1.5rem;
+        }
+      }
+
+      .figures-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 2rem 0;
+        justify-content: center;
+      }
+
+      .figure-wrapper {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+
+      .figure-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .figure-caption {
+        text-align: center;
+        color: #4a5568;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .figure-wrapper {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+
+    <div class="case-container">
+      <h2 class="section-title">Case Study</h2>
+      <!-- <h3 class="subsection-title">Generalization Property</h3> -->
+        <div class="description">
+            <p>Here are some randomly selected samples from MathVista.</p>
+        </div>
+        <div class="container">
+            <div id="results-carousel" class="carousel results-carousel" style="margin-top: -30rem;">
+              <div class="item is-flex is-justify-content-center" >
+                 <img class="image is-16by9" style="max-width: 800px;" src="static/images/case1.jpg" alt="case1"/>
+                <h2 class="subtitle has-text-centered">
+                </h2>
+              </div>
+              <div class="item is-flex is-justify-content-center">
+                <img class="image is-16by9" style="max-width: 800px;" src="static/images/case2.jpg" alt="case2"/>
+                <h2 class="subtitle has-text-centered">
+                </h2>
+              </div>
+              <div class="item is-flex is-justify-content-center">
+                <img class="image is-16by9" style="max-width: 800px;" src="static/images/case3.jpg" alt="case3"/>
+                <h2 class="subtitle has-text-centered">
+               </h2>
+              </div>
+              <div class="item is-flex is-justify-content-center">
+                <img class="image is-16by9" style="max-width: 800px;" src="static/images/case4.jpg" alt="case4"/>
+                <h2 class="subtitle has-text-centered">
+               </h2>
+             </div>
+            </div>
+          </div>
+        <!-- <div class="description">
+        <p></p>
+        </div> -->
+    </div>
+</section>
     
     
 
