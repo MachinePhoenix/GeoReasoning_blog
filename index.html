@@ -933,275 +933,39 @@
         <p>The model trained on GeoReasoning has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning to enhance the model's reasoning capabilities.</p>
       </div>
 
-      <!-- Multiple Dataset Performance -->
-      <div class="table-container">
-        <h3 class="subtitle">Table 3: Performance Comparison Across Different Datasets</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>miniF2F</th>
-              <th>ProofNet</th>
-              <th>FormalNumina</th>
-              <th>Lean-workbook</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Deepseek-Prover-v1.5-RL</td>
-              <td>50.0%</td>
-              <td class="highlight">16.0%</td>
-              <td>54.0%</td>
-              <td>14.7%</td>
-            </tr>
-            <tr class="goedel-row">
-              <td>Goedel-Prover-SFT</td>
-              <td class="highlight">57.6% (+7.6)</td>
-              <td>15.2% (-0.8)</td>
-              <td class="highlight">61.2% (+7.2)</td>
-              <td class="highlight">21.2% (+6.5)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p>The model demonstrates strong performance across multiple datasets, with notable improvements in miniF2F,
-          FormalNumina, and Lean-workbook benchmarks. While performance on ProofNet shows a slight decrease, the overall
-          average performance shows a significant improvement of 5.4 percentage points.</p>
-      </div>
-
-      <!-- PutnamBench Results -->
-      <div class="table-container">
-        <h3 class="subtitle">Table 4: Number of Problems Solved on PutnamBench (out of 644)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Ranking</th>
-              <th>Model</th>
-              <th>Type</th>
-              <th>Num-solved</th>
-              <th>Compute (Pass)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="goedel-row">
-              <td>1</td>
-              <td>Goedel-Prover-SFT <span class="diamond-green">♦</span></td>
-              <td>Whole Proof Generation</td>
-              <td>7</td>
-              <td>512</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>ABEL  </td>
-              <td>Tree Search Method</td>
-              <td>7</td>
-              <td>596</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Goedel-Prover-SFT <span class="diamond-green">♦</span></td>
-              <td>Whole Proof Generation</td>
-              <td>6</td>
-              <td>32</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>InternLM2.5-StepProver <span class="diamond-green">♦</span></td>
-              <td>Tree Search Method</td>
-              <td>6</td>
-              <td>2×32×600</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>InternLM 7B</td>
-              <td>Whole Proof Generation</td>
-              <td>4</td>
-              <td>4096</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>GPT-4o  </td>
-              <td>Whole Proof Generation</td>
-              <td>1</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>COPRA (GPT-4o) <span class="diamond-green">♦</span></td>
-              <td>Whole Proof Generation</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>ReProver w/ retrieval <span class="diamond-green">♦</span></td>
-              <td>Tree Search Method</td>
-              <td>0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>ReProver w/o retrieval <span class="diamond-green">♦</span></td>
-              <td>Tree Search Method</td>
-              <td>0</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving 7 out of 644 problems with Pass@512, ranking the first place at the <a href="https://trishullab.github.io/PutnamBench/leaderboard.html" target="_blank">Putnam Leaderboard</a>. <span class="diamond-green">♦</span></td> indicates a open-source model.</p>
-      </div>
-
-      <h3 class="subsection-title">Iterative Training Details</h3>
-      <!-- Iterative Training Details -->
-      Given a set of formalized statements, we start by employing DeepSeek-Prover-V1.5-RL to generate 16 proofs for each problem. We evaluate these proofs and retain one valid proof per statement. Using this curated collection, we conduct supervised fine-tuning (SFT) on DeepSeek-Prover-V1.5-Base, resulting in Prover-Iter-1. This iterative process continues, with each version, Prover-Iter-k, generating new answers and training the model for subsequent iterations. Importantly, Prover-Iter-k is trained based on the proofs collected from the previous iteration, Prover-Iter-(k-1).
-
-      Additionally, we gradually increase the number of statements throughout the iterative training process. Starting from Iteration 6, we also incorporate Mathlib into the training data. The details of the data statistics for each iteration are presented in the table below.
-
-      <div class="table-container">
-        <h3 class="subtitle">Table 6: Iterative Training Details</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Iteration</th>
-              <th colspan="2">Statements</th>
-              <th colspan="3">Training Data</th>
-            </tr>
-            <tr>
-              <th></th>
-              <th>Lean-workbook</th>
-              <th>Formalized Statements</th>
-              <th>Lean-workbook Solved</th>
-              <th>Formalized Proofs</th>
-              <th>Mathlib</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Iter-0</td>
-              <td>140K</td>
-              <td>0</td>
-              <td>20.6K</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-1</td>
-              <td>140K</td>
-              <td>140K</td>
-              <td>20.6K</td>
-              <td>72.4K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-2</td>
-              <td>140K</td>
-              <td>270K</td>
-              <td>23.0K</td>
-              <td>128.7K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-3</td>
-              <td>140K</td>
-              <td>270K</td>
-              <td>24.4K</td>
-              <td>161.2K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-4</td>
-              <td>140K</td>
-              <td>882K</td>
-              <td>25.4K</td>
-              <td>425.8K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-5</td>
-              <td>140K</td>
-              <td>882K</td>
-              <td>27.0K</td>
-              <td>436.5K</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Iter-6</td>
-              <td>140K</td>
-              <td>882K</td>
-              <td>27.8K</td>
-              <td>443.2K</td>
-              <td>104K</td>
-            </tr>
-            <tr>
-              <td>Iter-7</td>
-              <td>140K</td>
-              <td>1.64M</td>
-              <td>28.8K</td>
-              <td>887.7K</td>
-              <td>104K</td>
-            </tr>
-            <tr>
-              <td>Iter-8</td>
-              <td>140K</td>
-              <td>1.64M</td>
-              <td>29.7K</td>
-              <td>915.7K</td>
-              <td>104K</td>
-            </tr>
-            <tr>
-              <td>Iter-9</td>
-              <td>140K</td>
-              <td>1.64M</td>
-              <td>30.3K</td>
-              <td>928.2K</td>
-              <td>104K</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="description">
-        <p> The model's performance across four datasets during iterative training is shown below. </p>
-      </div>
 
       <div class="figures-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; justify-items: center;">
         <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/minif2f_iteration/minif2f_iteration-1.png" alt="Performance on miniF2F and Held-out datasets" style="max-width: 80%; height: auto;">
+          <img src="static/images/case1.jpg" alt="case1" style="max-width: 80%; height: auto;">
           <div class="figure-caption">
-            Figure 1: Iterative Performance on miniF2F
           </div>
+          A geometric case
         </div>
         <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/FormalNumina_iteration/FormalNumina_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
+          <img src="static/images/case2.jpg" alt="case2" style="max-width: 80%; height: auto;">
           <div class="figure-caption">
-            Figure 2: Iterative Performance on FormalNumina
           </div>
+          An arithmetic case
         </div>
         <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/ProofNet_iteration/ProofNet_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
+          <img src="static/images/case3.jpg" alt="case3" style="max-width: 80%; height: auto;">
           <div class="figure-caption">
-            Figure 3: Iterative Performance on ProofNet
           </div>
+          An algebraic case
         </div>
         <div class="figure-wrapper" style="text-align: center;">
-          <img src="static/images/YongUpdate/Lean-workbook_iteration/Lean-workbook_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
+          <img src="static/images/case4.jpg" alt="case4" style="max-width: 80%; height: auto;">
           <div class="figure-caption">
-            Figure 4: Iterative Performance on Lean-workbook
           </div>
-        </div>
+          A numeric case
+        </div>  
       </div>
       <div class="description">
-        <p>The performance trends illustrated in Figures 1-4 demonstrate the consistent improvement of our model
-          across different datasets during the iterative training process.</p>
+        <p></p>
       </div>
 
       <!-- Key Findings -->
-      <div class="key-findings">
+      <!-- <div class="key-findings">
         <h3>Key Findings</h3>
         <ul>
           <li>Achieving state-of-the-art performance of 57.6% on miniF2F at Pass@32</li>
@@ -1209,7 +973,7 @@
           <li>Cumulatively solving 29.7K problems in Lean-workbook. We significantly increase the 15.7K proofs found by prior works.</li>
           <li>Iterative training process demonstrates consistent improvement in model performance</li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -1217,14 +981,14 @@
     <div class="container is-max-desktop content">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
       <pre><code>
-        @misc{lin2025goedelproverfrontiermodelopensource,
-          title={Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving}, 
-          author={Yong Lin and Shange Tang and Bohan Lyu and Jiayun Wu and Hongzhou Lin and Kaiyu Yang and Jia Li and Mengzhou Xia and Danqi Chen and Sanjeev Arora and Chi Jin},
-          year={2025},
-          eprint={2502.07640},
-          archivePrefix={arXiv},
-          primaryClass={cs.LG},
-          url={https://arxiv.org/abs/2502.07640}, 
+        @misc{georeasoning,
+            title={Generalizable Geometric Image Caption Synthesis}, 
+            author={Yue Xin and Wenyuan Wang and Rui Pan and Howard Meng and Renjie Pi and Ruida Wang and Tong Zhang},
+            year={2025},
+            eprint={2509.},
+            archivePrefix={arXiv},
+            primaryClass={cs.AI},
+            url={https://arxiv.org/abs/}, 
         }
     </code></pre>
     </div>
@@ -1235,10 +999,9 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            Lastest update at 2025-02-12. This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a
-              href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
-              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>
