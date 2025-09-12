@@ -470,20 +470,20 @@
           <div class="card-inner">
             <div class="card-front">
               <div class="card-title">
-                <i class="fas fa-database icon" style="color: #ef4444;"></i>
-                Statement Formalization
+                <i class="fas fa-database icon" style="color: #22c55e;"></i>
+                High Quality
               </div>
               <div class="content">
-                Train two formalizers to formalize the statements.
-                <ul>                  
+                Models trained with GeoReasoning outperform those trained on other counterpart datasets on downstream tasks. Besides they demonstrate favorable scaling behavior.
+                <!-- <ul>                  
                   
                   <li><strong>Formalizer A:</strong> Trained on Lean workbook pairs</li>
                   <li><strong>Formalizer B:</strong> Trained on 170K Claude-formalized statements</li>
                   <li>Each problem receives multiple formalizations</li>
-                </ul>
+                </ul> -->
               </div>
             </div>
-            <div class="card-back">
+            <!-- <div class="card-back">
               <div class="detailed-content">
                 <h3>Detailed Process</h3>
                 <p>We train two distinct formalizers to enhance statement diversity:</p>
@@ -493,7 +493,7 @@
                 <p>Training completed in under 24 hours using 8 H100 GPUs. Each problem receives 16 total formalizations
                   (8 from each formalizer).</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -504,19 +504,19 @@
               <div class="card-front">
                 <div class="card-title">
                   <i class="fas fa-sitemap icon" style="color: #3b82f6;"></i>
-                  Data Scale
+                  Strong Generalization
                 </div>
                 <div class="content">
-                  Statistics of the data scale.
-                  <ul>
+                    The improvement brought by GeoReasoning are not limited to geometric tasks, but are also generalized to non-geometric mathematical tasks even non-mathematical domains like art and engineering.
+                  <!-- <ul>
                     <li>928K informal statements processed</li>
                     <li>1.64M formalized statements</li>
                     <li>140K Leanworkbook statements</li>
                     <li><strong>Total: 1.78M formal statements</strong></li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
-              <div class="card-back">
+              <!-- <div class="card-back">
                 <div class="detailed-content">
                   <h3>Data Sources</h3>
                   <ul>
@@ -531,7 +531,7 @@
                     <li>Comprehensive coverage across different mathematical domains</li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -541,18 +541,18 @@
           <div class="card-inner">
             <div class="card-front">
               <div class="card-title">
-                <i class="fas fa-rocket icon" style="color: #22c55e;"></i>
-                Quality Assessment
+                <i class="fas fa-rocket icon" style="color: #ef4444;"></i>
+                Superior Scalability
               </div>
               <div class="content">
-                Assess and filter the formalized statements.
-                <ul>
+                The generated examples are composed from a predefined relation library with approximately 50 templates, allowing for the expansion to geometry problems of arbitrary complexity.
+                <!-- <ul>
                   <li><strong>CC Test:</strong> Using LEAN compiler to verify syntax</li>
                   <li><strong>FC Test:</strong> Using LLM as judge to verify accuracy and completeness</li>
-                </ul>
+                </ul> -->
               </div>
             </div>
-            <div class="card-back">
+            <!-- <div class="card-back">
               <div class="detailed-content">
                 <h3>Compiling Correctness (CC) Test</h3>
                 <ul>
@@ -567,7 +567,7 @@
                   <li>Statements below 0.5 FC score are filtered out</li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
