@@ -166,7 +166,7 @@
                   submissions and look forward to your participation! 😆</b>
               </p>
             </div> -->
-            <h2 class="title is-3">Introduction</h2>
+            <h2 class="section-title">Abstract</h2>
             <div class="content has-text-justified">
               <p>
                 Multimodal large language models have various practical applications that demand strong reasoning abilities. Despite recent advancements in this area, these models still struggle to solve complex geometric problems. A key challenge stems from the lack of high-quality image-text pair datasets for understanding geometric images. Furthermore, most template-based data synthesis pipelines typically fail to generalize to questions outside their predefined templates. In this paper, we mitigate this issue by introducing a complementary RLHF process into the data generation pipeline. By adopting RAFT to adjust captions for image-text pairs generated from fewer than 50 templates and using reward signals derived from downstream mathematical problem-solving tasks, our pipeline successfully captures the key features of geometry problem-solving. This enables better task generalization and yields non-trivial improvements. Furthermore, the generated dataset also enhances the general mathematical reasoning capabilities of multimodal large language models beyond the domain of geometric mathematical problems, yielding accuracy improvements of 2.8%–5.3% in arithmetic, algebraic, and numerical tasks with even non-geometric input images.
@@ -464,6 +464,44 @@
       <h2 class="section-title">Key Achievements</h2>
 
 
+      <!-- Data Scale Card -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-title">
+              <i class="fas fa-database icon" style="color: #ef4444;"></i>
+              Data Scale
+            </div>
+            <div class="content">
+              Statistics of the data scale.
+              <ul>
+                <li>928K informal statements processed</li>
+                <li>1.64M formalized statements</li>
+                <li>140K Leanworkbook statements</li>
+                <li><strong>Total: 1.78M formal statements</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="detailed-content">
+              <h3>Data Sources</h3>
+              <ul>
+                <li>860K problems from Numina datasets</li>
+                <li>68K private collection from Art of Problem Solving (AOPS)</li>
+                <li>140K statements from Leanworkbook and Leanworkbook-plus</li>
+              </ul>
+              <h3>Formalization Results</h3>
+              <ul>
+                <li>760K problems with dual formalizations (both Formalizer A and B)</li>
+                <li>123K problems with single formalization</li>
+                <li>Comprehensive coverage across different mathematical domains</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <div class="cards">
         <!-- Statement Formalization Card -->
         <div class="card">
@@ -497,6 +535,7 @@
           </div>
         </div>
 
+
         <!-- Quality Assessment Card -->
         <div class="card">
           <div class="card-inner">
@@ -526,77 +565,6 @@
                   <li>Uses Qwen2.5-72B-Instruct for assessment</li>
                   <li>Generates 4 independent judgments per statement</li>
                   <li>Statements below 0.5 FC score are filtered out</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Iterative Training Card -->
-        <!-- <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-title">
-                <i class="fas fa-sync icon" style="color: #eab308;"></i>
-                Expert Iteration
-              </div>
-              <div class="content">
-                Perform expert iteration on the formalized statements.
-                <ol>
-                  <li>Generate 16 proof candidates per statement</li>
-                  <li>Verify correctness</li>
-                  <li>Collect verified proofs</li>
-                  <li>Train new model and repeat process</li>
-                </ol>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="detailed-content">
-                <h3>Training Process</h3>
-                <ul>
-                  <li>Uses DeepSeek-Prover-V1.5-RL for initial proof generation</li>
-                  <li>Generates 16 proofs per problem</li>
-                  <li>Compiles proofs to verify correctness</li>
-                  <li>Retains one correct proof per statement</li>
-                  <li>Trains new model (Prover-Iter-k) based on Deepseek-Prover-v1-Base with collected proofs</li>
-                  <li>Iteratively improves through multiple training cycles</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- Data Scale Card -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="card-title">
-                <i class="fas fa-database icon" style="color: #ef4444;"></i>
-                Data Scale
-              </div>
-              <div class="content">
-                Statistics of the data scale.
-                <ul>
-                  <li>928K informal statements processed</li>
-                  <li>1.64M formalized statements</li>
-                  <li>140K Leanworkbook statements</li>
-                  <li><strong>Total: 1.78M formal statements</strong></li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="detailed-content">
-                <h3>Data Sources</h3>
-                <ul>
-                  <li>860K problems from Numina datasets</li>
-                  <li>68K private collection from Art of Problem Solving (AOPS)</li>
-                  <li>140K statements from Leanworkbook and Leanworkbook-plus</li>
-                </ul>
-                <h3>Formalization Results</h3>
-                <ul>
-                  <li>760K problems with dual formalizations (both Formalizer A and B)</li>
-                  <li>123K problems with single formalization</li>
-                  <li>Comprehensive coverage across different mathematical domains</li>
                 </ul>
               </div>
             </div>
