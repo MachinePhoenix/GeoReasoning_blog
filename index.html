@@ -644,6 +644,11 @@
         /* 浅绿色 */
       }
 
+      .block-4 {
+        background-color: #AFABAB;
+        /* 浅灰色 */
+      }
+
       .highlight {
         color: #2980b9;
         font-weight: bold;
@@ -825,48 +830,47 @@
               <tr>
                 <th>Dataset</th>
                 <th>Type</th>
-                <th>MathVerse</th>
-                <th>MathVistae</th>
+                <th>MMMU</th>
               </tr>
             </thead>
             <tbody>
               <!-- Block 1 - Pass@32/128 -->
+              <tr class="block-4">
+                <td>None</td>
+                <td>N/A</td>
+                <td>43.3±0.7</td>
+              </tr>
               <tr class="block-1">
                 <td>AutoGeo</td>
                 <td>Caption</td>
-                <td>24.5±0.4</td>
-                <td>47.6±0.5</td>
+                <td>43.5±0.5</td>
               </tr>
               <tr class="block-1">
                   <td>GeoPeP</td>
                   <td>Caption</td>
-                  <td>24.2±0.2</td>
-                  <td>47.7±0.4</td>
+                  <td>43.7±0.6</td>
               </tr>
               <!-- Block 2 - Pass@3200 -->
               <tr class="block-2">
                   <td>GeoGPT4V</td>
                   <td>QA</td>
-                  <td>25.2±0.5</td>
-                  <td>47.5±0.2</td>
+                  <td>44.0±0.9</td>
               </tr>
               <tr class="block-2">
                   <td>Geo170K</td>
                   <td>QA</td>
-                  <td>25.3±0.1</td>
-                  <td>47.6±0.3</td>
+                  <td>42.9±1.0</td>
               </tr>
               <tr class="block-3 goedel-row">
                 <td>GeoReasoning</td>
                 <td>Caption</td>
-                <td class="highlight">26.0±0.3</td>
-                <td class="highlight">48.8±0.2</td>
+                <td class="highlight">44.9±0.7</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="description">
-          <p>The model trained on GeoReasoning has better reasoning ability compared to that trained on other caption datasets and even outperforms other multimodal reasoning datasets. This observation demonstrates a more pronounced ability of GeoReasoning to enhance the model's reasoning capabilities.</p>
+          <p>The model trained on GeoReasoning </p>
         </div>
         
 
