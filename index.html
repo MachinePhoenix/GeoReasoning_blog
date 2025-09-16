@@ -513,22 +513,14 @@
                   </ul> -->
                 </div>
               </div>
-              <!-- <div class="card-back">
+              <div class="card-back">
                 <div class="detailed-content">
-                  <h3>Data Sources</h3>
-                  <ul>
-                    <li>860K problems from Numina datasets</li>
-                    <li>68K private collection from Art of Problem Solving (AOPS)</li>
-                    <li>140K statements from Leanworkbook and Leanworkbook-plus</li>
-                  </ul>
-                  <h3>Formalization Results</h3>
-                  <ul>
-                    <li>760K problems with dual formalizations (both Formalizer A and B)</li>
-                    <li>123K problems with single formalization</li>
-                    <li>Comprehensive coverage across different mathematical domains</li>
-                  </ul>
+                  <h3>Experiments</h3>
+                  <p>We train base models on GeoReasoning and evaluate the performance on MMMU to test its generalization property.</p>
+                  <p><strong>Result 1:</strong> The model trained on GeoReasoning outperforms the base model on various domains like art, science, engineering, etc., indicating that GeoReasoning can boost the reasoning capacity on diverse domains.</p>
+                  <p><strong>Result 2:</strong> The models trained on GeoReasoning outperforms those on other datasets, revealing the stronger generalization property of GeoReasoning.</p>
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
 
@@ -542,29 +534,24 @@
                 Superior Scalability
               </div>
               <div class="content">
-                The generated examples are composed from a predefined relation library with approximately 50 templates, allowing for the expansion to geometry problems of arbitrary complexity.
+                The generated examples are composed from a pre-defined relation library with approximately 50 basic relations, allowing for the expansion to geometry problems of arbitrary complexity.
                 <!-- <ul>
                   <li><strong>CC Test:</strong> Using LEAN compiler to verify syntax</li>
                   <li><strong>FC Test:</strong> Using LLM as judge to verify accuracy and completeness</li>
                 </ul> -->
               </div>
             </div>
-            <!-- <div class="card-back">
+            <div class="card-back">
               <div class="detailed-content">
-                <h3>Compiling Correctness (CC) Test</h3>
+                <h3>Generation Process</h3>
                 <ul>
-                  <li>Ensures formalized statements follow Lean syntax</li>
-                  <li>Must successfully compile with placeholder ":= by sorry"</li>
-                </ul>
-                <h3>Faithfulness and Completeness (FC) Test</h3>
-                <ul>
-                  <li>Evaluates accuracy of problem translation</li>
-                  <li>Uses Qwen2.5-72B-Instruct for assessment</li>
-                  <li>Generates 4 independent judgments per statement</li>
-                  <li>Statements below 0.5 FC score are filtered out</li>
+                  <li>We first pre-define a relation library composed of approximately 50 basic relations and the corresponding clause library.</li>
+                  <li>We then randomly sample relations and the corresponding clauses, after which we check the compatibility of them.</li>
+                  <li>In this way we can generate geometry problems of arbitrary complexity and difficulty.</li>
+                  <li>Since the generation is fast, we are able to efficiently and scalably generate a large volume of samples.</li>
                 </ul>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
 
