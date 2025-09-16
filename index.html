@@ -73,7 +73,7 @@
               </span>
               <div class="affiliations" style="margin-top: 1rem;">
                 <!-- <p><strong>Affiliations:</strong></p> -->
-                <p> <sup>1</sup>UIUC,    <sup>2</sup>NVIDIA</p>
+                <p> <sup>1</sup>UIUC, <sup>2</sup>NVIDIA</p>
               </div>
             </div>
 
@@ -474,7 +474,7 @@
                 High Quality
               </div>
               <div class="content">
-                Models trained with GeoReasoning outperform those trained on other counterpart datasets on downstream tasks. Besides they demonstrate favorable scaling behavior.
+                GeoReasoning is a carefully constructed geometry captioning dataset consist of high quality image-caption pairs. It outperforms other counterpart datasets on downstream benchmarks and exhibits favorable scaling behaviour.
                 <!-- <ul>                  
                   
                   <li><strong>Formalizer A:</strong> Trained on Lean workbook pairs</li>
@@ -485,13 +485,10 @@
             </div>
             <div class="card-back">
               <div class="detailed-content">
-                <h3>Detailed Process</h3>
-                <p>We train two distinct formalizers to enhance statement diversity:</p>
-                <p><strong>Formalizer A:</strong> Trained using Qwen2.5-Coder-32B on natural language and formal
-                  language pairs from Lean workbook.</p>
-                <p><strong>Formalizer B:</strong> Trained on 170K statements formalized by Claude-sonnet-3.5 and syntactically verified by Lean compiler.</p>
-                <p>Training completed in under 24 hours using 8 H100 GPUs. Each problem receives 16 total formalizations
-                  (8 from each formalizer).</p>
+                <h3>Experiments</h3>
+                <p>We train base models on diverse mathematical datasets, including both captioning (AutoGeo, GeoPeP, and our proposed GeoReasoning) and reasoning (GeoGPT4V, Geo170K) datasets. Besides, we train base models on various sizes of these datasets. Then we evaluate these trained models on commonly-used mathematical benchmarks (MathVista and MathVerse).</p>
+                <p><strong>Result 1:</strong> The model trained on GeoReasoning outperforms those on other datasets, indicating the high quality of GeoReasoning and its superior property to improve reasoning capacity.</p>
+                <p><strong>Result 2:</strong> The models trained on various sizes of GeoReasoning exhibit obvious scaling behaviour.</p>
               </div>
             </div>
           </div>
