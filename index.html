@@ -472,10 +472,10 @@
           <div class="card-front">
             <div class="card-title">
               <i class="fas fa-code icon" style="color: #3b82f6;"></i>
-              High Quality
+              Open-Source
             </div>
             <div class="content">
-              GeoReasoning is a carefully constructed geometry captioning dataset consist of high quality image-caption pairs. It outperforms other counterpart datasets on downstream benchmarks and exhibits favorable scaling behaviour.
+              We are one of the earliest efforts to open-source AlphaGeometry to advance geometric problem solving, with a focus on efficiently constructing high-quality caption-image pairs.
               <!-- <ul>                  
                 
                 <li><strong>Formalizer A:</strong> Trained on Lean workbook pairs</li>
@@ -486,10 +486,12 @@
           </div>
           <div class="card-back">
             <div class="detailed-content">
-              <h3>Experiments</h3>
-              <p>We train base models on diverse mathematical datasets, including both captioning (AutoGeo, GeoPeP, and our proposed GeoReasoning) and reasoning (GeoGPT4V, Geo170K) datasets. Besides, we train base models on various sizes of these datasets. Then we evaluate these trained models on commonly-used mathematical benchmarks (MathVista and MathVerse).</p>
-              <p><strong>Result 1:</strong> The model trained on GeoReasoning outperforms those on other datasets, indicating the high quality of GeoReasoning and its superior property to improve reasoning capacity.</p>
-              <p><strong>Result 2:</strong> The models trained on various sizes of GeoReasoning exhibit obvious scaling behaviour.</p>
+              <h3>The Relation Between AlphaGeometry and GeoReasoning</h3>
+              <ul>
+                Building on and improving AlphaGeometry's tooling, our work differs from it in emphasis: 
+                <p><strong>AlphaGeometry:</strong> Combining the intuition and conjecturing ability of neural networks with the logical reasoning of symbolic engines to solve complex geometry problems, especially theorem proofs at the Olympiad level.</p>
+                <p><strong>GeoReasoning:</strong> Concentrating on creating a high-quality geometric dataset of varying difficulty with no information loss between geometric diagrams and their captions.</p>
+              </ul>
             </div>
           </div>
         </div>
