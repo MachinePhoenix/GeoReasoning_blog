@@ -258,7 +258,7 @@
 
       .cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         padding: 20px;
         max-width: 1000px;
@@ -267,7 +267,7 @@
 
       .card {
         position: relative;
-        height: 280px;
+        height: 250px;
         perspective: 1000px;
       }
 
@@ -467,6 +467,34 @@
 
 
       <div class="cards">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-title">
+              <i class="fas fa-code icon" style="color: #3b82f6;"></i>
+              High Quality
+            </div>
+            <div class="content">
+              GeoReasoning is a carefully constructed geometry captioning dataset consist of high quality image-caption pairs. It outperforms other counterpart datasets on downstream benchmarks and exhibits favorable scaling behaviour.
+              <!-- <ul>                  
+                
+                <li><strong>Formalizer A:</strong> Trained on Lean workbook pairs</li>
+                <li><strong>Formalizer B:</strong> Trained on 170K Claude-formalized statements</li>
+                <li>Each problem receives multiple formalizations</li>
+              </ul> -->
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="detailed-content">
+              <h3>Experiments</h3>
+              <p>We train base models on diverse mathematical datasets, including both captioning (AutoGeo, GeoPeP, and our proposed GeoReasoning) and reasoning (GeoGPT4V, Geo170K) datasets. Besides, we train base models on various sizes of these datasets. Then we evaluate these trained models on commonly-used mathematical benchmarks (MathVista and MathVerse).</p>
+              <p><strong>Result 1:</strong> The model trained on GeoReasoning outperforms those on other datasets, indicating the high quality of GeoReasoning and its superior property to improve reasoning capacity.</p>
+              <p><strong>Result 2:</strong> The models trained on various sizes of GeoReasoning exhibit obvious scaling behaviour.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
         <!-- Statement Formalization Card -->
         <div class="card">
           <div class="card-inner">
@@ -502,7 +530,7 @@
             <div class="card-inner">
               <div class="card-front">
                 <div class="card-title">
-                  <i class="fas fa-sitemap icon" style="color: #3b82f6;"></i>
+                  <i class="fas fa-sitemap icon" style="color: #eab308;"></i>
                   Strong Generalization
                 </div>
                 <div class="content">
