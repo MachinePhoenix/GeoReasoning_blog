@@ -725,6 +725,28 @@
       .col-metric {
         width: 8%;
       }
+
+      .main-header-group {
+        text-align: center;
+      }
+      
+      /* 第二个表格的特定样式 */
+      .mmmu-table {
+        min-width: 800px;
+      }
+      
+      .mmmu-table .col-category {
+        width: 15%;
+        text-align: left;
+      }
+      
+      .mmmu-table .col-metric {
+        width: 12%;
+      }
+      
+      .underline {
+        text-decoration: underline;
+      }
     </style>
 
     <div class="results-container">
@@ -750,50 +772,90 @@
 
         <div class="table-container">
         
-          <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds</h3>
-          <table>
+          <h3 class="subtitle">Table: Accuracy of the models evaluated on all domains of MMMU  trained on 10K samples of various datasets over multiple random seeds</h3>
+          <table class="mmmu-table">
             <thead>
-              <tr>
-                <th>Dataset</th>
-                <th>Type</th>
-                <th>MMMU</th>
-              </tr>
+                <tr>
+                    <th class="col-category table-main-header">Dataset</th>
+                    <th class="col-category table-main-header">Type</th>
+                    <th class="table-sub-header col-metric">Overall</th>
+                    <th class="table-sub-header col-metric">A&D</th>
+                    <th class="table-sub-header col-metric">Busi</th>
+                    <th class="table-sub-header col-metric">Sci</th>
+                    <th class="table-sub-header col-metric">H&M</th>
+                    <th class="table-sub-header col-metric">Human</th>
+                    <th class="table-sub-header col-metric">Tech</th>
+                </tr>
             </thead>
             <tbody>
-              <!-- Block 1 - Pass@32/128 -->
-              <tr class="block-4">
-                <td>None</td>
-                <td>N/A</td>
-                <td>43.3±0.7</td>
-              </tr>
-              <tr class="block-1">
-                <td>AutoGeo</td>
-                <td>Caption</td>
-                <td>43.5±0.5</td>
-              </tr>
-              <tr class="block-1">
-                  <td>GeoPeP</td>
+                <tr class="block-4">
+                    <td class="row-header">Base</td>
+                    <td>N/A</td>
+                    <td class="numeric-cell">43.3±0.7</td>
+                    <td class="numeric-cell">57.8±4.0</td>
+                    <td class="numeric-cell">44.1±0.6</td>
+                    <td class="numeric-cell">34.3±0.9</td>
+                    <td class="numeric-cell">46.8±2.2</td>
+                    <td class="numeric-cell">59.2±2.1</td>
+                    <td class="numeric-cell">29.0±1.3</td>
+                </tr>
+                <tr class="block-1">
+                    <td class="row-header">AutoGeo</td>
+                    <td>Caption</td>
+                    <td class="numeric-cell">43.5±0.5</td>
+                    <td class="numeric-cell">59.3±1.4</td>
+                    <td class="numeric-cell">43.3±1.1</td>
+                    <td class="numeric-cell">34.9±1.3</td>
+                    <td class="numeric-cell">47.4±1.1</td>
+                    <td class="numeric-cell">58.9±1.5</td>
+                    <td class="numeric-cell">30.7±2.6</td>
+                </tr>
+                <tr class="block-1">
+                    <td class="row-header">GeoPeP</td>
+                    <td>Caption</td>
+                    <td class="numeric-cell">43.7±0.9</td>
+                    <td class="numeric-cell">59.2±1.1</td>
+                    <td class="numeric-cell">40.4±1.4</td>
+                    <td class="numeric-cell">34.0±1.7</td>
+                    <td class="numeric-cell">45.1±0.9</td>
+                    <td class="numeric-cell">59.6±1.0</td>
+                    <td class="numeric-cell">32.6±0.7</td>
+                </tr>
+                <tr class="block-2">
+                    <td class="row-header">GeoGPT4V</td>
+                    <td>QA</td>
+                    <td class="numeric-cell">44.0±0.7</td>
+                    <td class="numeric-cell highlight">60.2±1.1</td>
+                    <td class="numeric-cell">43.1±1.5</td>
+                    <td class="numeric-cell">34.5±0.7</td>
+                    <td class="numeric-cell">46.0±0.7</td>
+                    <td class="numeric-cell">58.3±1.6</td>
+                    <td class="numeric-cell">30.8±2.0</td>
+                </tr>
+                <tr class="block-2">
+                    <td class="row-header">Geo170K</td>
+                    <td>QA</td>
+                    <td class="numeric-cell">42.9±1.0</td>
+                    <td class="numeric-cell">58.5±0.8</td>
+                    <td class="numeric-cell">43.6±1.4</td>
+                    <td class="numeric-cell">30.9±2.0</td>
+                    <td class="numeric-cell">46.8±2.2</td>
+                    <td class="numeric-cell">59.9±2.2</td>
+                    <td class="numeric-cell">30.9±1.6</td>
+                </tr>
+                <tr class="block-3 goedel-row">
+                  <td class="row-header">GeoReasoning</td>
                   <td>Caption</td>
-                  <td>43.7±0.6</td>
-              </tr>
-              <!-- Block 2 - Pass@3200 -->
-              <tr class="block-2">
-                  <td>GeoGPT4V</td>
-                  <td>QA</td>
-                  <td>44.0±0.9</td>
-              </tr>
-              <tr class="block-2">
-                  <td>Geo170K</td>
-                  <td>QA</td>
-                  <td>42.9±1.0</td>
-              </tr>
-              <tr class="block-3 goedel-row">
-                <td>GeoReasoning</td>
-                <td>Caption</td>
-                <td class="highlight">44.9±0.7</td>
-              </tr>
+                    <td class="numeric-cell highlight">44.9±0.7</td>
+                    <td class="numeric-cell highlight">60.2±2.0</td>
+                    <td class="numeric-cell highlight">44.5±2.5</td>
+                    <td class="numeric-cell highlight">36.0±2.0</td>
+                    <td class="numeric-cell underline">46.7±1.1</td>
+                    <td class="numeric-cell highlight">60.0±0.5</td>
+                    <td class="numeric-cell highlight">32.9±1.3</td>
+                </tr>
             </tbody>
-          </table>
+        </table>
         </div>
         <div class="description">
           <p>The model trained on GeoReasoning outperforms those on other datasets, revealing its stronger generalization property.</p>
@@ -837,7 +899,7 @@
 
       <!-- Full Proof Generation Results -->
       <div class="table-container">
-        <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds</h3>
+        <h3 class="subtitle">Table: Accuracy of the models evaluated on diverse domains of MathVista and MathVerse trained on 10K samples of various datasets over multiple random seeds</h3>
         <table>
           <thead>
               <tr>
@@ -928,7 +990,7 @@
                   <td class="numeric-cell">26.9±0.7</td>
               </tr>
               <tr class="block-3 goedel-row">
-                <td class="row-header">AutoGeo</td>
+                <td class="row-header">GeoReasoning</td>
                 <td>Caption</td>
                   <td class="numeric-cell highlight">48.6±0.3</td>
                   <td class="numeric-cell highlight">62.8±1.3</td>
@@ -1269,7 +1331,7 @@
             year={2025},
             eprint={2509.15217},
             archivePrefix={arXiv},
-            primaryClass={cs.AI},
+            primaryClass={cs.AI; cs.CV; cs.LG},
             url={https://arxiv.org/abs/2509.15217}, 
         }
     </code></pre>
