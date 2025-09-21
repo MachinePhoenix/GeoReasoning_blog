@@ -80,7 +80,7 @@
             </div>
 
             <div class="column has-text-centered">
-              <div class="https://arxiv.org/pdf/2509.15217">
+              <div class="https://arxiv.org/abs/2509.15217">
                 <span class="link-block">
                   <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -913,6 +913,111 @@
 
       <!-- Full Proof Generation Results -->
       <div class="table-container">
+
+        <table>
+          <thead>
+              <tr>
+                  <th rowspan="2">Dataset</th>
+                  <th rowspan="2">Type</th>
+                  <th colspan="5">MathVista (↑)</th>
+                  <th colspan="4">MathVerse (↑)</th>
+              </tr>
+              <tr>
+                  <!-- MathVista subheaders -->
+                  <th class="sub-header">Overall</th>
+                  <th class="sub-header">Geometry</th>
+                  <th class="sub-header">Algebra</th>
+                  <th class="sub-header">Science</th>
+                  <th class="sub-header">Statistic</th>
+                  
+                  <!-- MathVerse subheaders -->
+                  <th class="sub-header">Overall</th>
+                  <th class="sub-header">Vision-Dominant</th>
+                  <th class="sub-header">Text-Dominant</th>
+                  <th class="sub-header">Text-Lite</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="row-header">Base</td>
+                  <td>N/A</td>
+                  <td>46.2</td>
+                  <td>60.7</td>
+                  <td>59.1</td>
+                  <td>53.3</td>
+                  <td>43.2</td>
+                  <td>25.2</td>
+                  <td>24.0</td>
+                  <td>32.0</td>
+                  <td>25.9</td>
+              </tr>
+              <tr>
+                  <td class="row-header">AutoGeo</td>
+                  <td>Caption</td>
+                  <td>47.8±0.8</td>
+                  <td>62.3±2.4</td>
+                  <td>60.2±1.9</td>
+                  <td>52.5±1.2</td>
+                  <td>44.1±0.9</td>
+                  <td>24.6±0.4</td>
+                  <td>22.3±1.4</td>
+                  <td>35.2±0.7</td>
+                  <td>26.7±1.3</td>
+              </tr>
+              <tr>
+                  <td class="row-header">GeoPeP</td>
+                  <td>Caption</td>
+                  <td>47.5±0.4</td>
+                  <td>61.0±2.3</td>
+                  <td>59.6±1.8</td>
+                  <td>54.1±0.6</td>
+                  <td>44.2±0.8</td>
+                  <td>24.2±0.2</td>
+                  <td>21.7±0.9</td>
+                  <td>33.7±0.3</td>
+                  <td>25.7±1.3</td>
+              </tr>
+              <tr>
+                  <td class="row-header">GeoGPT4</td>
+                  <td>QA</td>
+                  <td>47.5±0.2</td>
+                  <td>60.5±0.7</td>
+                  <td>59.3±1.3</td>
+                  <td>54.1±1.5</td>
+                  <td>44.6±1.0</td>
+                  <td>25.2±0.5</td>
+                  <td>22.4±0.8</td>
+                  <td>36.4±1.4</td>
+                  <td>26.9±1.0</td>
+              </tr>
+              <tr>
+                  <td class="row-header">Geo170K</td>
+                  <td>QA</td>
+                  <td>47.6±0.3</td>
+                  <td>62.2±1.5</td>
+                  <td>60.6±1.2</td>
+                  <td>53.5±1.5</td>
+                  <td>43.7±0.4</td>
+                  <td>25.3±0.1</td>
+                  <td>22.5±1.0</td>
+                  <td>35.4±1.7</td>
+                  <td>26.9±0.7</td>
+              </tr>
+              <tr>
+                  <td class="row-header highlight">GeoReasoning</td>
+                  <td class="highlight">Caption</td>
+                  <td class="best">48.6±0.3</td>
+                  <td class="best">62.8±1.3</td>
+                  <td class="best">61.4±1.4</td>
+                  <td class="best">54.3±1.2</td>
+                  <td class="best">46.0±0.5</td>
+                  <td class="best">25.8±0.1</td>
+                  <td class="best">24.0±0.8</td>
+                  <td class="best">36.8±0.4</td>
+                  <td class="best">28.4±0.5</td>
+              </tr>
+          </tbody>
+      </table>
         
         <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds</h3>
         <table>
