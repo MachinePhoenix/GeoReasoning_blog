@@ -582,7 +582,7 @@
       }
 
       .results-container {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -606,49 +606,47 @@
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-bottom: 2rem;
-        overflow: hidden;
+        overflow: auto;
       }
 
       .table-container table {
         width: 100%;
         border-collapse: collapse;
+        table-layout: fixed;
+        min-width: 1000px;
       }
 
       .table-container th {
-        background-color: white;
-        padding: 12px 15px;
+        padding: 12px 10px;
         text-align: left;
         font-weight: bold;
         border-bottom: 2px solid #eee;
       }
 
       .table-container td {
-        padding: 12px 15px;
+        padding: 12px 10px;
         text-align: left;
       }
-      /* .table-container tbody tr:hover {
+      
+      .table-container tbody tr:hover {
         background-color: #f5f5f5 !important;
         transition: background-color 0.2s ease;
-        } */
+      }
 
       .block-1 {
         background-color: #fff0f5;
-        /* 浅粉色 */
       }
 
       .block-2 {
         background-color: #f0f8ff;
-        /* 浅蓝色 */
       }
 
       .block-3 {
         background-color: #f0fff0;
-        /* 浅绿色 */
       }
 
       .block-4 {
         background-color: #EDEDED;
-        /* 浅灰色 */
       }
 
       .highlight {
@@ -656,14 +654,9 @@
         font-weight: bold;
       }
 
-      .table-container table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
       .table-container th,
       .table-container td {
-        padding: 12px 15px;
+        padding: 12px 10px;
         text-align: left;
         border-bottom: 1px solid #e1e1e1;
       }
@@ -672,11 +665,6 @@
         background-color: #f8f9fa;
         font-weight: bold;
         color: #2c3e50;
-      }
-
-      .highlight {
-        color: #2980b9;
-        font-weight: bold;
       }
 
       .subtitle {
@@ -692,18 +680,6 @@
         color: #444;
       }
 
-      .diamond-green {
-        color: #22c55e;
-      }
-
-      .diamond-black {
-        color: #000;
-      }
-
-      .multirow {
-        vertical-align: middle;
-      }
-
       @media (max-width: 768px) {
         .results-section {
           padding: 2rem 1rem;
@@ -714,112 +690,39 @@
           padding: 8px;
           font-size: 0.9rem;
         }
-
-        .table-container {
-          overflow-x: auto;
-        }
       }
-
-      .key-findings {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        margin-top: 3rem;
-      }
-
-      .key-findings h3 {
-        color: #2c3e50;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-        font-weight: 600;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 0.5rem;
-      }
-
-      .key-findings ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .key-findings li {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
-        position: relative;
-        line-height: 1.6;
-        color: #4a5568;
-      }
-
-      .key-findings li:before {
-        content: "•";
-        color: #3b82f6;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        font-size: 1.2em;
-      }
-
-      @media (max-width: 768px) {
-        .key-findings {
-          padding: 1.5rem;
-        }
-      }
-
-      .figures-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin: 2rem 0;
-        justify-content: center;
-      }
-
-      .figure-wrapper {
-        flex: 1;
-        min-width: 300px;
-        max-width: 500px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-      }
-
-      .figure-wrapper img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .figure-caption {
-        text-align: center;
-        color: #4a5568;
-        margin-top: 1rem;
-        font-size: 0.9rem;
-      }
-
-      @media (max-width: 768px) {
-        .figure-wrapper {
-          flex: 1 1 100%;
-        }
-      }
-
+      
+      /* 新增样式用于多列表头 */
       .table-main-header {
         text-align: center;
-        background-color: #e8f4fc !important;
-        font-size: 1.1em;
+        background-color: #f8f9fa !important;
+        font-size: 1.05em;
       }
       
       .table-sub-header {
         text-align: center;
-        background-color: #f0f8ff !important;
+        background-color: #f8f9fa !important;
       }
       
       .numeric-cell {
         text-align: center;
       }
       
-      .best-result {
-        background-color: #e1f5fe !important;
-        font-weight: bold;
+      .row-header {
+        font-weight: 600;
+      }
+      
+      /* 调整列宽 */
+      .col-dataset {
+        width: 14%;
+      }
+      
+      .col-type {
+        width: 10%;
+      }
+      
+      .col-metric {
+        width: 8%;
       }
     </style>
 
@@ -933,33 +836,33 @@
 
       <!-- Full Proof Generation Results -->
       <div class="table-container">
-
+        <h3 class="subtitle">Table: Accuracy of the models trained on 10K samples of various datasets over multiple random seeds</h3>
         <table>
           <thead>
               <tr>
-                  <th rowspan="2">Dataset</th>
-                  <th rowspan="2">Type</th>
+                  <th class="col-dataset table-main-header" rowspan="2">Dataset</th>
+                  <th class="col-type table-main-header" rowspan="2">Type</th>
                   <th colspan="5" class="table-main-header">MathVista (↑)</th>
                   <th colspan="4" class="table-main-header">MathVerse (↑)</th>
               </tr>
               <tr>
                   <!-- MathVista subheaders -->
-                  <th class="table-sub-header">Overall</th>
-                  <th class="table-sub-header">Geometry</th>
-                  <th class="table-sub-header">Algebra</th>
-                  <th class="table-sub-header">Science</th>
-                  <th class="table-sub-header">Statistic</th>
+                  <th class="table-sub-header col-metric">Overall</th>
+                  <th class="table-sub-header col-metric">Geometry</th>
+                  <th class="table-sub-header col-metric">Algebra</th>
+                  <th class="table-sub-header col-metric">Science</th>
+                  <th class="table-sub-header col-metric">Statistic</th>
                   
                   <!-- MathVerse subheaders -->
-                  <th class="table-sub-header">Overall</th>
-                  <th class="table-sub-header">Vision-Dominant</th>
-                  <th class="table-sub-header">Text-Dominant</th>
-                  <th class="table-sub-header">Text-Lite</th>
+                  <th class="table-sub-header col-metric">Overall</th>
+                  <th class="table-sub-header col-metric">Vision-Dominant</th>
+                  <th class="table-sub-header col-metric">Text-Dominant</th>
+                  <th class="table-sub-header col-metric">Text-Lite</th>
               </tr>
           </thead>
           <tbody>
               <tr class="block-4">
-                  <td>Base</td>
+                  <td class="row-header">Base</td>
                   <td>N/A</td>
                   <td class="numeric-cell">46.2</td>
                   <td class="numeric-cell">60.7</td>
@@ -972,7 +875,7 @@
                   <td class="numeric-cell">25.9</td>
               </tr>
               <tr class="block-1">
-                  <td>AutoGeo</td>
+                  <td class="row-header">AutoGeo</td>
                   <td>Caption</td>
                   <td class="numeric-cell">47.8±0.8</td>
                   <td class="numeric-cell">62.3±2.4</td>
@@ -985,7 +888,7 @@
                   <td class="numeric-cell">26.7±1.3</td>
               </tr>
               <tr class="block-1">
-                  <td>GeoPeP</td>
+                  <td class="row-header">GeoPeP</td>
                   <td>Caption</td>
                   <td class="numeric-cell">47.5±0.4</td>
                   <td class="numeric-cell">61.0±2.3</td>
@@ -998,7 +901,7 @@
                   <td class="numeric-cell">25.7±1.3</td>
               </tr>
               <tr class="block-2">
-                  <td>GeoGPT4</td>
+                  <td class="row-header">GeoGPT4</td>
                   <td>QA</td>
                   <td class="numeric-cell">47.5±0.2</td>
                   <td class="numeric-cell">60.5±0.7</td>
@@ -1011,7 +914,7 @@
                   <td class="numeric-cell">26.9±1.0</td>
               </tr>
               <tr class="block-2">
-                  <td>Geo170K</td>
+                  <td class="row-header">Geo170K</td>
                   <td>QA</td>
                   <td class="numeric-cell">47.6±0.3</td>
                   <td class="numeric-cell">62.2±1.5</td>
@@ -1024,17 +927,17 @@
                   <td class="numeric-cell">26.9±0.7</td>
               </tr>
               <tr class="block-3 goedel-row">
-                  <td>GeoReasoning</td>
-                  <td>Caption</td>
-                  <td class="numeric-cell best-result">48.6±0.3</td>
-                  <td class="numeric-cell best-result">62.8±1.3</td>
-                  <td class="numeric-cell best-result">61.4±1.4</td>
-                  <td class="numeric-cell best-result">54.3±1.2</td>
-                  <td class="numeric-cell best-result">46.0±0.5</td>
-                  <td class="numeric-cell best-result">25.8±0.1</td>
-                  <td class="numeric-cell best-result">24.0±0.8</td>
-                  <td class="numeric-cell best-result">36.8±0.4</td>
-                  <td class="numeric-cell best-result">28.4±0.5</td>
+                  <td class="row-header highlight">GeoReasoning</td>
+                  <td class="highlight">Caption</td>
+                  <td class="numeric-cell highlight">48.6±0.3</td>
+                  <td class="numeric-cell highlight">62.8±1.3</td>
+                  <td class="numeric-cell highlight">61.4±1.4</td>
+                  <td class="numeric-cell highlight">54.3±1.2</td>
+                  <td class="numeric-cell highlight">46.0±0.5</td>
+                  <td class="numeric-cell highlight">25.8±0.1</td>
+                  <td class="numeric-cell highlight">24.0±0.8</td>
+                  <td class="numeric-cell highlight">36.8±0.4</td>
+                  <td class="numeric-cell highlight">28.4±0.5</td>
               </tr>
           </tbody>
       </table>
